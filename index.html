@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="UTAMU Innovation Club - Connect with student tech communities, join WhatsApp groups, build skills, and innovate together.">
+  <title>UTAMU Innovation Club | Student Communities Portal</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Subtle Light Mode Background Mesh -->
+  <div class="light-bg-mesh"></div>
+
+  <!-- Main Container -->
+  <main class="portal-container">
+
+    <!-- Hero Section -->
+    <header class="hero-card">
+      <div class="brand-avatar-container">
+        <img src="images/uic.png" alt="UTAMU Innovation Club Logo" class="brand-avatar"
+          onerror="this.src='images/hero_banner.jpg'">
+        <div class="live-indicator" title="Active Communities"></div>
+      </div>
+
+      <h1 class="hero-title">UTAMU Innovation Club</h1>
+      <p class="hero-tagline">
+        UTAMU Innovation Club (UIC) is a student-led community at UTAMU focused on fostering innovation, creativity, technology, and entrepreneurship. It brings students together to explore new ideas, develop practical skills, work on real-world projects, and collaborate across different areas of technology. The club creates opportunities for students to learn from one another, connect with industry and technology communities, participate in events and challenges, and turn ideas into impactful solutions. UIC is a space where students learn, build, collaborate, and grow as innovators and future technology leaders.
+      </p>
+
+      <!-- Photo Strip Showcasing Zindi Event & Club Activities -->
+      <div class="photo-strip-container">
+        <div class="photo-strip-label">
+          <div class="photo-strip-label-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+            <span>Club Activities & Highlights</span>
+          </div>
+          <span style="font-size: 0.75rem; font-weight: 700; color: var(--uic-teal);">Swipe</span>
+        </div>
+        <div class="photo-strip-scroll">
+          <div class="photo-card">
+            <img src="images/studentdays (1).png" alt="student developer days">
+            <div class="photo-overlay">
+              <span class="photo-tag">UTAMU Student Developer Day</span>
+              <span class="photo-caption">students' Hackathon day</span>
+            </div>
+          </div>
+          <div class="photo-card">
+            <img src="images/community_photo.jpg" alt="UTAMU Community at Zindi Event">
+            <div class="photo-overlay">
+              <span class="photo-tag">Zindi Africa Event</span>
+              <span class="photo-caption">Data Science & AI Community</span>
+            </div>
+          </div>
+          <div class="photo-card">
+            <img src="images/git.png" alt="github event">
+            <div class="photo-overlay">
+              <span class="photo-tag">Github Uganda</span>
+              <span class="photo-caption">Git and Github workshop</span>
+            </div>
+          </div>
+          <div class="photo-card">
+            <img src="images/github.png" alt="github">
+            <div class="photo-overlay">
+              <span class="photo-tag">Github copilot Devdays Wakiso</span>
+              <span class="photo-caption">Git, Github and github-copilot</span>
+            </div>
+          </div>
+          <div class="photo-card">
+            <img src="images/workshop.jpg" alt="workshop">
+            <div class="photo-overlay">
+              <span class="photo-tag">UIC workshop</span>
+              <span class="photo-caption">software engineering workshop</span>
+            </div>
+          </div>
+          <div class="photo-card">
+            <img src="images/d.jpg" alt="Students at droidcon 2025">
+            <div class="photo-overlay">
+              <span class="photo-tag">droidcon Uganda 2025</span>
+              <span class="photo-caption">Androip development conference</span>
+            </div>
+          </div>
+          <div class="photo-card">
+            <img src="images/group.jpg" alt="blockchain">
+            <div class="photo-overlay">
+              <span class="photo-tag">Blockchain Devfest 2025</span>
+              <span class="photo-caption">matching potential with Oppotunity</span>
+            </div>
+          </div>
+          <div class="photo-card">
+            <img src="images/grad.jpg" alt="graduation">
+            <div class="photo-overlay">
+              <span class="photo-tag">UTAMU's Graduation</span>
+              <span class="photo-caption">Our members graduating</span>
+            </div>
+          </div>
+          <div class="photo-card">
+            <img src="images/fossa.png" alt="fossa">
+            <div class="photo-overlay">
+              <span class="photo-tag">FOSSA 2026</span>
+              <span class="photo-caption">University's ICT Competetition</span>
+            </div>
+          </div>
+        </div>
+    </header>
+
+    <!-- Communities Header -->
+    <div class="section-header">
+      <h2 class="section-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+        <span>Explore Communities</span>
+      </h2>
+    </div>
+
+    <!-- Club Cards List (Rendered via app.js with SVG Icons & Unique Colored Stripes) -->
+    <div class="clubs-grid" id="clubsGrid">
+      <!-- Clubs loaded from app.js -->
+    </div>
+
+    <!-- Bottom Actions -->
+    <div class="bottom-bar">
+      <button type="button" class="btn-manage" id="openManageBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path
+            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+          </path>
+        </svg>
+        Admin: Manage & Add Communities
+      </button>
+    </div>
+
+  </main>
+
+  <!-- Password Prompt Modal -->
+  <div class="modal-overlay" id="passwordModal">
+    <div class="modal-box password-modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+          <span>Admin Access</span>
+        </h3>
+        <button type="button" class="modal-close" id="closePasswordBtn" aria-label="Close">✕</button>
+      </div>
+      <form id="passwordForm">
+        <div class="form-group">
+          <label class="form-label" for="adminPassword">Enter Admin Password</label>
+          <input type="password" id="adminPassword" class="form-input" placeholder="Password" required>
+        </div>
+        <p id="passwordError" class="password-error" style="display: none;">Incorrect password. Try again.</p>
+        <button type="submit" class="form-submit-btn">Access Admin Panel</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Admin Modal (Add & Manage Communities) -->
+  <div class="modal-overlay" id="manageModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+          <span>Admin Portal</span>
+        </h3>
+        <button type="button" class="modal-close" id="closeManageBtn" aria-label="Close">✕</button>
+      </div>
+
+      <!-- Tabs: Add Community / Manage Existing -->
+      <div class="modal-tabs">
+        <button type="button" class="tab-btn active" id="tabAddBtn">Add New Club</button>
+        <button type="button" class="tab-btn" id="tabListBtn">Manage Existing (<span id="tabCount">8</span>)</button>
+      </div>
+
+      <!-- Tab 1: Add New Club Form -->
+      <div id="tabAddContent">
+        <form id="addClubForm">
+          <div class="form-group">
+            <label class="form-label" for="newClubName">Club / Community Name</label>
+            <input type="text" id="newClubName" class="form-input" placeholder="e.g. UTAMU CyberSecurity Society"
+              required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="newClubLink">WhatsApp Group Invite Link</label>
+            <input type="url" id="newClubLink" class="form-input" placeholder="https://chat.whatsapp.com/..." required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="newClubDesc">Description</label>
+            <input type="text" id="newClubDesc" class="form-input" placeholder="e.g. WhatsApp Community · Free to join"
+              value="WhatsApp Community · Free to join">
+          </div>
+
+          <!-- Image Icon Choice -->
+          <div class="form-group">
+            <label class="form-label">Community Icon (Image)</label>
+            <div class="icon-upload-area">
+              <div class="icon-preview" id="iconPreview">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                  <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+                <span>No image selected</span>
+              </div>
+              <div class="icon-upload-controls">
+                <label class="icon-upload-btn" for="iconFileInput">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="17 8 12 3 7 8"></polyline>
+                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                  </svg>
+                  Upload Image
+                </label>
+                <input type="file" id="iconFileInput" accept="image/*" style="display: none;">
+                <span class="icon-or-text">or</span>
+                <input type="url" id="iconUrlInput" class="form-input icon-url-input" placeholder="Paste image URL...">
+              </div>
+            </div>
+          </div>
+
+          <!-- Accent Color Choice -->
+          <div class="form-group">
+            <label class="form-label">Card Accent Color</label>
+            <div class="color-selector-row" id="colorSelectorRow">
+              <!-- Populated via JS -->
+            </div>
+          </div>
+
+          <button type="submit" class="form-submit-btn">
+            Add Community to Page
+          </button>
+        </form>
+      </div>
+
+      <!-- Tab 2: Manage & Delete Existing Clubs -->
+      <div id="tabListContent" style="display: none;">
+        <div class="admin-clubs-list" id="adminClubsList">
+          <!-- Populated via JS -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-msg" id="toastMsg">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+      stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+    <span id="toastText">Action completed</span>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

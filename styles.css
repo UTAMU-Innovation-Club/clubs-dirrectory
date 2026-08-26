@@ -1,0 +1,901 @@
+/* ==========================================================================
+   UTAMU Innovation Club - Custom Linktree & Communities Portal
+   LIGHT MODE DESIGN SYSTEM
+   Palette: Clean Crisp White, UIC Navy, Red, Gold, Teal & WhatsApp Green
+   Strictly NO EMOJIS - Clean SVG Vector Icons Only
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap');
+
+:root {
+  /* Core Light Palette */
+  --bg-main: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f5f9;
+  --bg-subtle: #f1f5f9;
+
+  /* Typography Colors */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+
+  /* UIC Brand Colors */
+  --uic-navy: #0a192f;
+  --uic-navy-light: #1e293b;
+  --uic-red: #e11d48;
+  --uic-red-light: #ffe4e6;
+  --uic-gold: #d97706;
+  --uic-gold-light: #fef3c7;
+  --uic-teal: #0d9488;
+  --uic-teal-light: #ccfbf1;
+  --uic-blue: #031847;
+  --uic-blue-light: #dbeafe;
+
+  /* WhatsApp Brand */
+  --uic-whatsapp: #16a34a;
+  --uic-whatsapp-hover: #15803d;
+  --uic-whatsapp-bg: #dcfce7;
+
+  /* Borders & Shadows */
+  --border-color: #e2e8f0;
+  --border-focus: #0d9488;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px -2px rgba(15, 23, 42, 0.08), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 12px 28px -4px rgba(15, 23, 42, 0.1), 0 4px 12px -2px rgba(15, 23, 42, 0.05);
+
+  /* Fonts */
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  min-height: 100vh;
+  position: relative;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle modern geometric background */
+.light-bg-mesh {
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(at 15% 15%, rgba(13, 148, 136, 0.07) 0px, transparent 50%),
+    radial-gradient(at 85% 15%, rgba(225, 29, 72, 0.05) 0px, transparent 50%),
+    radial-gradient(at 50% 85%, rgba(217, 119, 6, 0.06) 0px, transparent 50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.portal-container {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 32px 20px 100px;
+}
+
+/* ==========================================================================
+   Hero Section (Light, Clean, Vibrant)
+   ========================================================================== */
+.hero-card {
+  position: relative;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 36px 28px 30px;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 28px;
+  overflow: hidden;
+}
+
+/* UIC Top Brand Multi-color Bar */
+.hero-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--uic-teal) 0%, var(--uic-gold) 35%, var(--uic-red) 70%, var(--uic-navy) 100%);
+}
+
+.brand-avatar-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.brand-avatar {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #ffffff;
+  padding: 3px;
+  border: 3px solid var(--uic-teal);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease;
+}
+
+.brand-avatar:hover {
+  transform: scale(1.05);
+}
+
+.live-indicator {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 20px;
+  height: 20px;
+  background: var(--uic-whatsapp);
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: var(--uic-navy);
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+
+.hero-tagline {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  max-width: 480px;
+  margin: 0 auto 20px;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   Photo Strip (Zindi Event, Hackathons & Club Gallery)
+   ========================================================================== */
+.photo-strip-container {
+  margin: 26px 0 6px;
+  text-align: left;
+}
+
+.photo-strip-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding: 0 2px;
+}
+
+.photo-strip-label-title {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.photo-strip-label-title svg {
+  width: 16px;
+  height: 16px;
+  color: var(--uic-navy);
+}
+
+.photo-strip-scroll {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+.photo-strip-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.photo-strip-scroll::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.photo-card {
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  height: 160px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.photo-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.1) 60%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 12px 14px;
+}
+
+.photo-tag {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--uic-gold-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.photo-caption {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ==========================================================================
+   Section Header
+   ========================================================================== */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 32px 0 16px;
+  padding: 0 4px;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--uic-navy);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-title svg {
+  width: 20px;
+  height: 20px;
+  color: var(--uic-teal);
+}
+
+/* ==========================================================================
+   Club Cards (Light, High-contrast, Colored Left Stripe, Join WhatsApp)
+   ========================================================================== */
+.clubs-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.club-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 16px 20px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  overflow: hidden;
+}
+
+.club-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: #cbd5e1;
+}
+
+/* Unique Accent Stripe on Left */
+.club-accent-stripe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 5px;
+  background-color: var(--card-accent, var(--uic-teal));
+}
+
+.club-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  flex: 1;
+  padding-left: 4px;
+}
+
+.club-icon-box {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background-color: var(--icon-bg, #f1f5f9);
+  color: var(--card-accent, var(--uic-navy));
+  border: 1px solid var(--border-color);
+}
+
+.club-icon-box svg {
+  width: 22px;
+  height: 22px;
+}
+
+.club-icon-box img {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.club-details {
+  min-width: 0;
+  flex: 1;
+}
+
+.club-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.02rem;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.club-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.club-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--card-accent, var(--uic-teal));
+}
+
+/* Green WhatsApp Join Button */
+.join-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--uic-whatsapp);
+  color: #ffffff;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(22, 163, 74, 0.25);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+.join-btn:hover {
+  background: var(--uic-whatsapp-hover);
+  transform: scale(1.04);
+}
+
+.join-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+/* ==========================================================================
+   Admin Section & Floating Action
+   ========================================================================== */
+.bottom-bar {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-manage {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 320px;
+  padding: 14px 22px;
+  border-radius: 14px;
+  background: var(--uic-navy);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-manage:hover {
+  background: var(--uic-navy-light);
+  transform: translateY(-2px);
+}
+
+.btn-manage svg {
+  width: 18px;
+  height: 18px;
+  color: var(--uic-gold);
+}
+
+.portal-footer {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.portal-footer a {
+  color: var(--uic-teal);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Admin Modal (Add/Manage Communities)
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-box {
+  width: 100%;
+  max-width: 540px;
+  max-height: 90vh;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 28px;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+  transform: scale(0.96);
+  transition: transform 0.25s ease;
+}
+
+.modal-overlay.active .modal-box {
+  transform: scale(1);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.modal-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--uic-navy);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-close {
+  background: #f1f5f9;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+  background: var(--uic-red);
+  color: #ffffff;
+  border-color: var(--uic-red);
+}
+
+/* Tabs inside Modal */
+.modal-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  background: #f1f5f9;
+  padding: 4px;
+  border-radius: 10px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 8px 12px;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-btn.active {
+  background: #ffffff;
+  color: var(--uic-navy);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px 14px;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.form-input:focus {
+  border-color: var(--uic-teal);
+  box-shadow: 0 0 0 3px var(--uic-teal-light);
+}
+
+/* Icon Upload Area */
+.icon-upload-area {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.icon-preview {
+  width: 100%;
+  height: 80px;
+  background: #f8fafc;
+  border: 2px dashed var(--border-color);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: var(--text-light);
+  transition: border-color 0.2s ease;
+}
+
+.icon-preview svg {
+  width: 28px;
+  height: 28px;
+}
+
+.icon-preview span {
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.icon-preview.has-image {
+  border-style: solid;
+  border-color: var(--uic-teal);
+  padding: 6px;
+}
+
+.icon-preview.has-image img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.icon-upload-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-upload-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--uic-navy);
+  color: #ffffff;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.icon-upload-btn:hover {
+  background: var(--uic-navy-light);
+}
+
+.icon-upload-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.icon-or-text {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.icon-url-input {
+  flex: 1;
+  min-width: 0;
+}
+
+.club-icon-img {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.admin-club-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  object-fit: cover;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Color Accent Palette */
+.color-selector-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.color-swatch-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.color-swatch-btn:hover {
+  transform: scale(1.1);
+}
+
+.color-swatch-btn.selected {
+  border-color: var(--uic-navy);
+  transform: scale(1.1);
+}
+
+.form-submit-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 14px;
+  background: var(--uic-teal);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.form-submit-btn:hover {
+  background: #0f766e;
+}
+
+/* Existing Clubs List in Manage Tab */
+.admin-clubs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 320px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.admin-club-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+}
+
+.admin-club-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.admin-club-name {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-club-link {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-club-delete {
+  background: #fee2e2;
+  color: var(--uic-red);
+  border: 1px solid rgba(225, 29, 72, 0.2);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-left: 8px;
+}
+
+.admin-club-delete:hover {
+  background: var(--uic-red);
+  color: #ffffff;
+}
+
+/* Password Modal */
+.password-modal-box {
+  max-width: 400px;
+}
+
+.password-error {
+  color: var(--uic-red);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  background: var(--uic-red-light);
+  border-radius: 8px;
+  border: 1px solid rgba(225, 29, 72, 0.2);
+}
+
+/* Toast Message */
+.toast-msg {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: var(--uic-navy);
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  box-shadow: var(--shadow-lg);
+  z-index: 2000;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toast-msg.show {
+  transform: translateX(-50%) translateY(0);
+}
+
+.toast-msg svg {
+  width: 16px;
+  height: 16px;
+  color: var(--uic-teal);
+}
+
+@media (max-width: 480px) {
+  .hero-card {
+    padding: 28px 18px;
+  }
+
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .photo-card {
+    flex: 0 0 240px;
+    height: 145px;
+  }
+}
