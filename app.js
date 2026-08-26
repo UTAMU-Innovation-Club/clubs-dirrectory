@@ -350,6 +350,15 @@ window.closeModal = function () {
 };
 
 if (openManageBtn) openManageBtn.addEventListener('click', openModal);
+
+// Auto-open admin panel when URL has #admin
+function checkAdminRoute() {
+  if (window.location.hash === '#admin') {
+    openModal();
+  }
+}
+
+window.addEventListener('hashchange', checkAdminRoute);
 if (closeManageBtn) closeManageBtn.addEventListener('click', closeModal);
 
 if (passwordForm) {
@@ -408,9 +417,11 @@ function escapeHtml(str) {
 document.addEventListener('DOMContentLoaded', () => {
   initFirebase();
   renderColorSelector();
+  checkAdminRoute();
 });
 
 if (document.readyState !== 'loading') {
   initFirebase();
   renderColorSelector();
+  checkAdminRoute();
 }
